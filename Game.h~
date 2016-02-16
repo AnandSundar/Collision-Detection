@@ -8,10 +8,10 @@
 #include <stdlib.h>
 #include <GL/glut.h>    /* glut.h includes gl.h and glu.h */
 
-#include "Player.h"
+#include "Car.h"
 
 
-class Player;
+class Car;
 class ImageLoader;
 class Obstacle;
 
@@ -62,7 +62,7 @@ class Game {
 	  GLuint m_splashTexture;
       
       // Items in the game
-      Player m_myPlayer;
+      Car m_myCar;
       
 
    public:

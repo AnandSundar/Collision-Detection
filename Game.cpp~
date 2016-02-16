@@ -9,7 +9,7 @@
 #include <GL/freeglut.h>
 
 
-#include "Player.h"
+#include "Car.h"
 
 #include "ImageLoader.h"
 
@@ -62,28 +62,28 @@ void Game::run() {
 void Game::keyOperations()
 {
    if(keystates['a']){
-      Game::getInstance().m_myPlayer.left();
-      Game::getInstance().m_myPlayer.c_left = true;
+      Game::getInstance().m_myCar.left();
+      Game::getInstance().m_myCar.c_left = true;
    }else{
-   	Game::getInstance().m_myPlayer.c_left = false;
+   	Game::getInstance().m_myCar.c_left = false;
    }
    if(keystates['w']){
-      Game::getInstance().m_myPlayer.up();
-      Game::getInstance().m_myPlayer.c_up = true;
+      Game::getInstance().m_myCar.up();
+      Game::getInstance().m_myCar.c_up = true;
    }else{
-   	Game::getInstance().m_myPlayer.c_up = false;
+   	Game::getInstance().m_myCar.c_up = false;
    }
    if(keystates['d']){
-      Game::getInstance().m_myPlayer.right();
-      Game::getInstance().m_myPlayer.c_right = true;
+      Game::getInstance().m_myCar.right();
+      Game::getInstance().m_myCar.c_right = true;
    }else{
-   	Game::getInstance().m_myPlayer.c_right = false;
+   	Game::getInstance().m_myCar.c_right = false;
    }
    if(keystates['s']){
-      Game::getInstance().m_myPlayer.down();
-      Game::getInstance().m_myPlayer.c_down = true;
+      Game::getInstance().m_myCar.down();
+      Game::getInstance().m_myCar.c_down = true;
    }else{
-   	Game::getInstance().m_myPlayer.c_down = false;
+   	Game::getInstance().m_myCar.c_down = false;
    }
 
 }
@@ -168,10 +168,10 @@ void Game::update()
    }
 
 
-   m_myPlayer.update(m_myGameObjects3,3,4);
+   m_myCar.update(m_myGameObjects3,3,4);
      
-   m_myPlayer.update(m_myGameObjects4,1,3);
-   m_myPlayer.display();
+   m_myCar.update(m_myGameObjects4,1,3);
+   m_myCar.display();
 }
 
 
@@ -231,7 +231,7 @@ void Game::init() {
    //  3.render the current frame.
    // GLUT does these steps implicitly in its glutMainLoop()
 
-   // Set up the callbacks that will be taken Playere of in step 1:
+   // Set up the callbacks that will be taken care of in step 1:
     glutKeyboardFunc(Game::key); // Keyboard input
     glutKeyboardUpFunc(Game::keyUp);
     glutDisplayFunc(Game::run);  // Display frames
@@ -239,7 +239,7 @@ void Game::init() {
 
 
    m_backgroundTexture= ImageLoader::LoadTexture( "./imgs/south.bmp" );
-   m_myPlayer.init();
+   m_myCar.init();
 
     glutMainLoop(); // glutMainLoop enters the GLUT event processing loop. 
                     //This routine should be called at most once in a GLUT program. 

@@ -20,8 +20,8 @@
 #define OBSTACLE_H_
 
 #include "GameObject.h"
-#include "Player.h"
-class Player;
+#include "Car.h"
+class Car;
 
 class Obstacle: public GameObject {
 
@@ -38,7 +38,7 @@ public:
 	
 	void update (){};
 	void display (){};
-	bool collide (Player *C){};
+	bool collide (Car *C){};
 	Obstacle(int x, int y, int w, int h, int c);
    Obstacle(){};
 	
