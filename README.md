@@ -1,2 +1,2 @@
 # Collision-Detection
-Collision Detection for lab2
+Collision Detection
